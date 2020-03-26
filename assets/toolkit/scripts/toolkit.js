@@ -108,8 +108,9 @@
 				item = $(item);
 
 				var item_center = item.data('pos_top') + item.height() / 2;
+				var limit = (item.height() / 2 + windowHeight / 2) / 4;
 
-				var top = (item_center - center) / parseFloat(item.data('paralax') * 1.5);
+				var top = Math.min(limit, Math.max(-limit, (item_center - center) / parseFloat(item.data('paralax') * 1.5)));
 
 				item.css('top', top);
 			});

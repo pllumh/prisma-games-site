@@ -80,9 +80,10 @@
 			e.preventDefault();
 
 			emailjs.sendForm('default_service', 'contact_form', $('.contact-form').get(0)).then(function (response) {
-				console.log('SUCCESS!', response.status, response.text);
+				$('.contact-form').get(0).reset();
+				alert('Message successfully sent!');
 			}, function (error) {
-				console.log('FAILED...', error);
+				alert('Message failed!');
 			});
 		});
 

@@ -2,6 +2,17 @@ $icomoon-font-path: '../fonts/icomoon/fonts';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Permanent+Marker|Roboto|Roboto+Mono:200,400&display=swap');
 
+@font-face {
+	font-family: 'Courier New';
+	src: url('../fonts/courier/CourierNewPSMT.woff2') format('woff2'),
+			url('../fonts/courier/CourierNewPSMT.woff') format('woff'),
+			url('../fonts/courier/CourierNewPSMT.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
 // Fonts
 @import 
 	'icomoon/style.scss';

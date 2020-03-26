@@ -85,6 +85,12 @@
 				console.log('FAILED...', error);
 			});
 		});
+
+		$('.hero-section__icon').on('click', function () {
+			$('html, body').animate({
+				scrollTop: $('.who-we-are-section').offset().top
+			}, 500);
+		});
 	});
 
 	$(function () {
@@ -92,9 +98,9 @@
 		var items = $('*[data-paralax]');
 
 		function findInitialPositions() {
-			items.css('position', 'static').css('top', 0).each(function (idx, item) {
+			items.css('transform', 'translate(0px)').each(function (idx, item) {
 				$(item).data('pos_top', $(item).offset().top);
-			}).css('position', 'relative');
+			});
 
 			setItemParalaxPositions();
 		}
@@ -108,11 +114,11 @@
 				item = $(item);
 
 				var item_center = item.data('pos_top') + item.height() / 2;
-				var limit = (item.height() / 2 + windowHeight / 2) / 4;
+				var limit = (item.height() / 2 + windowHeight / 2) / 6;
 
-				var top = Math.min(limit, Math.max(-limit, (item_center - center) / parseFloat(item.data('paralax') * 1.5)));
+				var top = Math.min(limit, Math.max(-limit, (item_center - center) / parseFloat(item.data('paralax') * 1.8)));
 
-				item.css('top', top);
+				item.css('transform', 'translateY(' + top + 'px)');
 			});
 		}
 
